@@ -1,0 +1,38 @@
+<div class ="container">
+<h1>List of Projects</h1>
+<hr>
+</div>
+<div class="container">
+    <project-search></project-search>
+</div>
+
+<br>
+
+
+<div class="container">
+        <ul class="projects">
+            <li *ngFor="let project of projects" (click)="onSelect(project)" [class.selected]="project === selectedProject" >        
+                <span>{{project.title}}</span>                                        
+                 <button class="delete" (click)="deleteProject(project._id); $event.stopPropagation()">Delete</button>              
+            </li>           
+        </ul>         
+</div>
+<br>
+
+<div class ="container">  
+        
+            <input type="text" placeholder="Project Title" name="title" #title/><br><br>        
+        
+            <textarea placeholder="Describe your project here..." name="description" #description></textarea> 
+        
+           <span>
+              <button (click)="addProject(title.value,description.value)">Add Project</button>
+           </span>   
+</div>
+
+<div *ngIf="selectedProject">
+    <h2>
+        {{selectedProject.title | uppercase}} is my project
+    </h2>
+    <button (click)="gotoDetail()">View Details</button>
+</div>

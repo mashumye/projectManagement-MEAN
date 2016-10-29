@@ -1,0 +1,31 @@
+<form class="form-control">
+    <div class = "container">
+    <div *ngIf="project">
+            <h2>{{project.title}} details!</h2>
+            <div><label>Description: </label>{{project.description}}</div>
+            
+                        <ul>
+                            <li *ngFor = "let task of project.tasks">
+                                <span><input type="checkbox" checked="{{task.isDone}}"></span> 
+                                <span>{{task.title}} </span>                         
+                                <span>-> assigned to: {{task.employee}}</span>     
+                            </li>  
+                        </ul> 
+
+                    <div class="row">
+                            <span>
+                                <input type="text" placeholder="Title" name="title" #title/>
+                            </span>
+                            <span>
+                                <input type="text" placeholder="Employee" name="employee" #employee/>
+                            </span>
+                            <span>
+                                <button (click)="addTask(title.value,employee.value)">Add</button>
+                            </span>
+                    </div>       
+        
+        </div>
+        <button (click)="goBack()">Back</button>
+        <button (click)="save()">Save</button>
+    </div>
+</form>

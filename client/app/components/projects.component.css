@@ -1,0 +1,41 @@
+.selected {
+    background-color: #CFD8DC !important;
+    color: white;
+}
+.projects {
+    margin: 0 0 0 0;
+    list-style-type: none;
+    padding: 0;
+    width: 25em;
+}
+.projects li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    height: 2.6em;
+    border-radius: 4px;
+}
+.projects li.selected:hover {
+    background-color: #BBD8DC !important;
+    color: white;
+}
+.projects li:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+}
+.projects .text {
+    position: relative;
+    top: -3px;
+}
+
+button.delete {
+    float:right;
+    margin-top: 1px;
+    margin-right: .8em;
+    background-color: red !important;
+    color:white;
+}
